@@ -1,1 +1,3 @@
 # Blazon
+
+Autoclicker for Blazoncommunity
