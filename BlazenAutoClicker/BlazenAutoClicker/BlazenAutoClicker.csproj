@@ -133,6 +133,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlazenAutoClicker.Common.Constants\BlazenAutoClicker.Common.Constants.csproj">
+      <Project>{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}</Project>
+      <Name>BlazenAutoClicker.Common.Constants</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

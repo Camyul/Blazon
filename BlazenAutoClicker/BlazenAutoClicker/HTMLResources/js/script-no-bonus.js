@@ -1,4 +1,4 @@
-(function () {
+(function() {
     //$(document).ready(function() {
     let startMining = getAnchor('Start Mining');
     //console.log(startMining + ' Start Mining');
@@ -13,18 +13,7 @@
 
     let startWork = getAnchor('Click');
     //console.log(startWork + 'Click');
-    if (!checkForPayment()) {
-        console.log('pay for product');
-        let body = document.getElementsByTagName('body')[0];
-        body.innerHTML = '';
-        console.log(body);
-        let h1 = document.createElement('h1');
-        h1.innerText = 'Pay for Product!';
-        h1.classList.add("text-danger");
-        h1.classList.add("text-center");
-        console.log(h1);
-        body.appendChild(h1);
-    }
+
     if (startMining) {
         console.log('Start Mining');
         let randomTime = getRandomInt(3000, 5900);
@@ -219,5 +208,5 @@
         let isCorrect = new Date() < new Date(2020, (7 - 1), 1, 6, 7, 2, 4)
         return isCorrect;
     }
-  //})
+    //})
 })();

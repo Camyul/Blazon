@@ -1,4 +1,5 @@
-﻿using CefSharp;
+﻿using BlazenAutoClicker.Common.Constants;
+using CefSharp;
 using CefSharp.WinForms;
 using System;
 using System.IO;
@@ -10,7 +11,12 @@ namespace BlazenAutoClicker
     {
         public ChromiumWebBrowser chromeBrowser;
 
+        public bool isLicenseValid = true;
+
         public bool startMining;
+
+        public double zoomLevel = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -35,8 +41,6 @@ namespace BlazenAutoClicker
 
             chromeBrowser.Dock = DockStyle.Fill;
 
-            chromeBrowser.FrameLoadStart += (o, e) => chromeBrowser.SetZoomLevel(-2.8);
-
             //Wait for the page to finish loading (all resources will have been loaded, rendering is likely still happening)
             //chromeBrowser.LoadingStateChanged += (sender, args) =>
             //{
@@ -46,6 +50,10 @@ namespace BlazenAutoClicker
             //        chromeBrowser.ExecuteScriptAsync("alert('All Resources Have Loaded');");
             //    }
             //};
+
+            chromeBrowser.FrameLoadEnd += (o, e) => chromeBrowser.SetZoomLevel(this.zoomLevel);
+
+            isLicenseValid = CheckLicense();
 
             //Wait for the MainFrame to finish loading
             chromeBrowser.FrameLoadEnd += (sender, args) =>
@@ -59,6 +67,16 @@ namespace BlazenAutoClicker
             };
         }
 
+        private bool CheckLicense()
+        {
+            if (DateTime.Compare(DateTime.Now, new DateTime(Constants.YearLicense, Constants.MountLicense, Constants.DayLicense)) > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private string getJavaScript()
         {
             string path = string.Format(@"{0}\HTMLResources\js\script-no-bonus.js", Application.StartupPath);
@@ -66,6 +84,7 @@ namespace BlazenAutoClicker
             string script = File.ReadAllText(path);
 
             //chromeBrowser.ShowDevTools();
+
             return script;
         }
 
@@ -78,7 +97,14 @@ namespace BlazenAutoClicker
         {
             if (!this.startMining)
             {
+                if (!isLicenseValid)
+                {
+                    chromeBrowser.ExecuteScriptAsync("alert('The License is expired! Please renew license.');");
+                    return;
+                }
+
                 this.btnStart.Text = "Stop Mining";
+                this.btnStart.BackColor = System.Drawing.Color.LightGreen;
                 this.startMining = true;
 
                 string script = getJavaScript();
@@ -87,6 +113,7 @@ namespace BlazenAutoClicker
             else
             {
                 this.btnStart.Text = "Start Mining";
+                this.btnStart.BackColor = System.Drawing.Color.LightGray;
                 this.startMining = false;
             }
         }
@@ -94,6 +121,16 @@ namespace BlazenAutoClicker
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             chromeBrowser.Reload();
+        }
+
+        private void btnZoomIn_Click(object sender, EventArgs e)
+        {
+            this.zoomLevel -= 0.5;
+        }
+
+        private void btnZoomOut_Click(object sender, EventArgs e)
+        {
+            this.zoomLevel += 0.5;
         }
     }
 }

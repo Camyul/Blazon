@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazenAutoClicker", "BlazenAutoClicker\BlazenAutoClicker.csproj", "{ACA2F343-A0B8-480C-9240-BD936E80DCA0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commom", "Commom", "{D5CF6333-EE7B-4A5B-99E6-468C8BA23012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazenAutoClicker.Common.Constants", "BlazenAutoClicker.Common.Constants\BlazenAutoClicker.Common.Constants.csproj", "{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,24 @@ Global
 		{ACA2F343-A0B8-480C-9240-BD936E80DCA0}.Release|x64.Build.0 = Release|x64
 		{ACA2F343-A0B8-480C-9240-BD936E80DCA0}.Release|x86.ActiveCfg = Release|x86
 		{ACA2F343-A0B8-480C-9240-BD936E80DCA0}.Release|x86.Build.0 = Release|x86
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Debug|x64.Build.0 = Debug|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Release|x64.ActiveCfg = Release|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Release|x64.Build.0 = Release|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9E9F14B-1C4F-4686-B790-B8C7E37418C7} = {D5CF6333-EE7B-4A5B-99E6-468C8BA23012}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {891D00F6-3D62-4105-9905-491DFEF73805}
