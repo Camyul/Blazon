@@ -34,7 +34,7 @@ namespace BlazenAutoClicker
             CefSettings settings = new CefSettings();
 
             Cef.Initialize(settings);
-            chromeBrowser = new ChromiumWebBrowser("http://www.blazoncommunity.com/Webwork/User/UserPanel.php?Login=Yes");
+            chromeBrowser = new ChromiumWebBrowser("http://www.blazoncommunity.org/Webcoin/Shop/PanelShop_new.php?LoginAccess=Yes");
             //chromeBrowser = new ChromiumWebBrowser("https://www.google.bg/");
 
             this.pContainer.Controls.Add(chromeBrowser);
