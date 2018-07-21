@@ -79,7 +79,8 @@ namespace BlazenAutoClicker
 
         private string getJavaScript()
         {
-            string path = string.Format(@"{0}\HTMLResources\js\script-no-bonus.js", Application.StartupPath);
+            string path = string.Format(@"{0}\HTMLResources\js\script-no-bonus-01.js", Application.StartupPath);
+            //string path = string.Format(@"{0}\HTMLResources\js\script-no-bonus.js", Application.StartupPath);
             //string path = string.Format(@"{0}\HTMLResources\js\script-bonus.js", Application.StartupPath);
             string script = File.ReadAllText(path);
 

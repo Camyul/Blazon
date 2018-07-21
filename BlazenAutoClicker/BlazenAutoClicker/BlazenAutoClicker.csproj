@@ -126,6 +126,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HTMLResources\js\script-bonus-01.js" />
     <Content Include="HTMLResources\js\script-bonus.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
