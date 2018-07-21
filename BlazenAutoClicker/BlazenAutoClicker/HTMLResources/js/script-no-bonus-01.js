@@ -1,4 +1,4 @@
-(function() {
+(function () {
     //$(document).ready(function() {
     let startMining = getAnchor('Start Mining');
     //console.log(startMining + ' Start Mining');
@@ -26,12 +26,12 @@
         console.log(randomTime);
         setTimeout(resumeWorkWithTimeout, randomTime);
         return;
-    } else if (bonus.length > 0 && bonus[0].value === 'Bonus Mining') {
-        console.log('Bonus Mining');
-        let randomTime = getRandomInt(3000, 5700)
-        console.log(randomTime);
-        setTimeout(bonusMiningWithTimeout, randomTime);
-        return;
+        // } else if (bonus.length > 0 && bonus[0].value === 'Bonus Mining') {
+        //     console.log('Bonus Mining');
+        //     let randomTime = getRandomInt(3000, 5700)
+        //     console.log(randomTime);
+        //     setTimeout(bonusMiningWithTimeout, randomTime);
+        //     return;
     } else if (startWork && ch.length === 0) {
         console.log('Choise Ad or Click');
 

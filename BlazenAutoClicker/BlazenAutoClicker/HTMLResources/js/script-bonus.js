@@ -1,5 +1,5 @@
-(function() {
-    //$(document).ready(function() {
+(function () {
+
     let startMining = getAnchor('Start Mining');
     //console.log(startMining + ' Start Mining');
 
@@ -10,19 +10,27 @@
     let ch = document.getElementsByClassName('pulsante_low');
     //console.log(ch.length + ' cheboxes');
 
+    //Get Bonus Button
+    let bonus = document.getElementsByClassName('pulsante2');
+    // console.log(bonus);
+    // if (bonus.length > 0) {
+    //     console.log(bonus[0].value);
+    // }
 
     let startWork = getAnchor('Click');
     //console.log(startWork + 'Click');
 
     if (startMining) {
+
         console.log('Start Mining');
-        let randomTime = getRandomInt(3000, 5900);
+        let randomTime = getRandomInt(3000, 5900)
         console.log(randomTime);
         setTimeout(startMiningWithTimeout, randomTime);
         return;
     } else if (resumeWork) {
+
         console.log('Resume Work');
-        let randomTime = getRandomInt(3000, 6500);
+        let randomTime = getRandomInt(3000, 6500)
         console.log(randomTime);
         setTimeout(resumeWorkWithTimeout, randomTime);
         return;
@@ -31,7 +39,7 @@
         let randomTime = getRandomInt(3000, 5700)
         console.log(randomTime);
         setTimeout(bonusMiningWithTimeout, randomTime);
-        return;
+
     } else if (startWork && ch.length === 0) {
         console.log('Choise Ad or Click');
 
@@ -69,6 +77,7 @@
             ch[i].checked = true;
 
         }
+
         if (radio.length === 30) {
             console.log('Bonus Radio');
             let randomNum = getRandomInt(0, 29);
@@ -81,8 +90,6 @@
 
             setTimeout(complete, randomTime);
         } else {
-            checkForMinBonus()
-
             console.log('Waiting Ad Timeout');
             let randomNum = getRandomInt(2, 5);
 
@@ -90,14 +97,14 @@
             console.log(ch.length + ' cheboxes');
             console.log(radio.length + ' radio');
 
-            let randomTime = getRandomInt(51500, 70700);
+            let randomTime = getRandomInt(51500, 70700)
             console.log(randomTime);
 
             setTimeout(complete, randomTime);
         }
         return;
     } else {
-        let randomTime = getRandomInt(4000, 6700);
+        let randomTime = getRandomInt(4000, 6700)
         console.log(randomTime + ' refresh Page');
 
         setTimeout(refreshPage, randomTime);
@@ -192,21 +199,4 @@
 
         document.getElementsByClassName('pulsante2')[0].click();
     }
-
-    function checkForMinBonus() {
-        console.log('checkForMinBonus');
-        let bonusClick = document.getElementsByTagName('b');
-        for (let i = 0; i < bonusClick.length; i += 1) {
-            if (bonusClick[i].innerText.includes('| -0.3 Cent |')) {
-                refreshPage();
-                break;
-            }
-        }
-    }
-
-    function checkForPayment() {
-        let isCorrect = new Date() < new Date(2020, (7 - 1), 1, 6, 7, 2, 4)
-        return isCorrect;
-    }
-    //})
 })();
